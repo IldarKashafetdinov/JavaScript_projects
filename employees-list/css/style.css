@@ -42,6 +42,7 @@ svg {
     transform: rotate(-180deg);
 }
 
+
 .table:hover .button_th_svg path {
     fill: white;
 }
