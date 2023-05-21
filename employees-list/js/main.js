@@ -70,17 +70,10 @@ $workersListTHAll.forEach(element => {
     element.addEventListener('click', function() {
         column = this.dataset.column;
         columnDir = !columnDir;
+        element.querySelector('.button_th_svg').classList.toggle('rotate')
         render();
     })
 })
-
-// const array = document.querySelectorAll('.button_th_svg')
-
-// array.forEach(element => {
-//     element.addEventListener('click', function() {
-//         element.classList.toggle('rotate');
-//     })
-// })
 
 
 // Добавление сотрудника в таблицу
