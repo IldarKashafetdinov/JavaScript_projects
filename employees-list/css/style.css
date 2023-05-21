@@ -45,3 +45,7 @@ svg {
 .table:hover .button_th_svg path {
     fill: white;
 }
+
+.button_th_svg path {
+    transition: fill .3s ease-in-out;
+}
