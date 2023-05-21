@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сотруднки</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <section class="main">
+        <div class="container">
+            <h1 class="mb-5">
+                Список сотрудников
+            </h1>
+
+            <table class="table table-dark table-hover workers_table mb-5">
+                <thead>
+                    <th data-column="fio">
+                        <button class="button_th">ФИО<svg class="button_th_svg" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.94668 0.453339H4.79335H1.05335C0.413349 0.453339 0.0933488 1.22667 0.546682 1.68001L4.00002 5.13334C4.55335 5.68667 5.45335 5.68667 6.00668 5.13334L7.32001 3.82L9.46002 1.68001C9.90668 1.22667 9.58668 0.453339 8.94668 0.453339Z" fill="white"/>
+                        </svg></button>
+                    </th>
+                    <th data-column="birthDate">
+                        <button class="button_th">
+                            Дата рождения<svg class="button_th_svg" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.94668 0.453339H4.79335H1.05335C0.413349 0.453339 0.0933488 1.22667 0.546682 1.68001L4.00002 5.13334C4.55335 5.68667 5.45335 5.68667 6.00668 5.13334L7.32001 3.82L9.46002 1.68001C9.90668 1.22667 9.58668 0.453339 8.94668 0.453339Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </th>
+                    <th data-column="workStart">
+                        <button class="button_th">
+                            Время работы<svg class="button_th_svg" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.94668 0.453339H4.79335H1.05335C0.413349 0.453339 0.0933488 1.22667 0.546682 1.68001L4.00002 5.13334C4.55335 5.68667 5.45335 5.68667 6.00668 5.13334L7.32001 3.82L9.46002 1.68001C9.90668 1.22667 9.58668 0.453339 8.94668 0.453339Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </th>
+                    <th data-column="post">
+                        <button class="button_th">
+                            Должность<svg class="button_th_svg" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.94668 0.453339H4.79335H1.05335C0.413349 0.453339 0.0933488 1.22667 0.546682 1.68001L4.00002 5.13334C4.55335 5.68667 5.45335 5.68667 6.00668 5.13334L7.32001 3.82L9.46002 1.68001C9.90668 1.22667 9.58668 0.453339 8.94668 0.453339Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </th>
+                </thead>
+                <tbody id="workers_list">
+                </tbody>
+            </table>
+
+            <form action="" id="add-worker">
+                <div class="mb-3">
+                    <input class="form-control" type="text" required placeholder="Фамилия" id="input-surename">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" required placeholder="Имя" id="input-name">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" required placeholder="Отчество" id="input-lastname">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="number" required placeholder="Начало работы" id="input-workStart">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="date" required id="input-birthDate">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" required placeholder="Должность" id="input-post">
+                </div>
+                <button class="button_form btn btn-primary" id="btn">Добавить сотрудника</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>
