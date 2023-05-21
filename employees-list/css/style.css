@@ -29,6 +29,14 @@ svg {
     margin-left: 15px;
 }
 
+.container {
+    padding-top: 40px;
+}
+
+table {
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 1);
+}
+
 .button_th {
     padding: 0;
     background-color: transparent;
