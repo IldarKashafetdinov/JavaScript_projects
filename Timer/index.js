@@ -8,7 +8,7 @@ const btnReset = document.createElement('button');
 counterElement.textContent = 0;
 btnStart.innerHTML = 'Старт';
 btnPause.textContent = 'Пауза';
-btnReset.textContent = 'Стоп';
+btnReset.textContent = 'Сброс';
 
 
 btnWrap.append(btnStart);
@@ -30,6 +30,10 @@ btnStart.onclick = function() {
     }, 1000)
 
 
+    btnStart.setAttribute('disabled', 'true');
+    btnStart.style['cursor'] = 'not-allowed';
+    btnPause.style['cursor'] = 'pointer';
+
     counterElement.classList.add('green__color');
     counterElement.classList.remove('red__color');
     counterElement.classList.add('border__green');
@@ -39,6 +43,9 @@ btnStart.onclick = function() {
 btnPause.onclick = function() {
     clearInterval(timerId);
 
+    btnStart.removeAttribute('disabled');
+    btnStart.style['cursor'] = 'pointer';
+    btnPause.style['cursor'] = 'not-allowed';
 
     counterElement.classList.add('red__color');
     counterElement.classList.add('border__red');
@@ -48,6 +55,12 @@ btnReset.onclick = function() {
     counter = 0;
     counterElement.innerText = counter;
     clearInterval(timerId);
+
+
+    btnStart.removeAttribute('disabled');
+    btnStart.style['cursor'] = 'pointer';
+    btnPause.style['cursor'] = 'pointer';
+    btnPause.removeAttribute('disabled');
 
     counterElement.classList.remove('green__color');
     counterElement.classList.remove('red__color');
