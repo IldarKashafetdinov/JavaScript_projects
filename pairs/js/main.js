@@ -6,6 +6,9 @@ const qtyCards = document.querySelector('.qty__cards');
 const qtyCardsBtn = document.querySelectorAll('.qty__btn');
 let qtyCardsResult;
 const reply = document.querySelector('.reply__btn');
+const congratContainer = document.querySelector('.congrat__container');
+const congratContent = document.querySelectorAll('span');
+let timeout = 500;
 
 
 startBtn.addEventListener('click', function() {
@@ -73,85 +76,28 @@ function newGame(container, cardsCount) {
         }
 
         if (document.querySelectorAll('.card.success').length === cardsNumberArray.length) {
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span1'));
-                document.querySelector('.span1').classList.remove('none');
-            }, 300);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span2'));
-                document.querySelector('.span2').classList.remove('none');
-            }, 350);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span3'));
-                document.querySelector('.span3').classList.remove('none');
-            }, 400);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span4'));
-                document.querySelector('.span4').classList.remove('none');
-            }, 450);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span5'));
-                document.querySelector('.span5').classList.remove('none');
-            }, 500);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span6'));
-                document.querySelector('.span6').classList.remove('none');
-            }, 550);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span7'));
-                document.querySelector('.span7').classList.remove('none');
-            }, 600);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span8'));
-                document.querySelector('.span8').classList.remove('none');
-            }, 650);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span9'));
-                document.querySelector('.span9').classList.remove('none');
-            }, 700);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span10'));
-                document.querySelector('.span10').classList.remove('none');
-            }, 750);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span11'));
-                document.querySelector('.span11').classList.remove('none');
-            }, 800);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span12'));
-                document.querySelector('.span12').classList.remove('none');
-            }, 850);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span13'));
-                document.querySelector('.span13').classList.remove('none');
-            }, 900);
-            
-            setTimeout(function () {
-                document.querySelector('.congrat__container').append(document.querySelector('.span14'));
-                document.querySelector('.span14').classList.remove('none');
-            }, 950);
+            fireCongrat(congratContent);
 
             setTimeout(function () {
                 document.querySelector('.reply__container').append(document.querySelector('.reply__btn'));
                 document.querySelector('.reply__btn').classList.remove('none');
             }, 2000);
-            
 
+            
             reply.addEventListener('click', () => {
                 location.reload();
             })
         }
     }
+}
+
+
+function fireCongrat(list) {
+    for (let i = 0; i < list.length; i++) {
+        setTimeout(function () {
+            congratContainer.append(list[i]);
+            list[i].classList.remove('none');
+        }, timeout)
+        timeout = timeout + 50;
+    } 
 }
