@@ -7,7 +7,7 @@ const qtyCardsBtn = document.querySelectorAll('.qty__btn');
 let qtyCardsResult;
 const reply = document.querySelector('.reply__btn');
 const congratContainer = document.querySelector('.congrat__container');
-const congratContent = document.querySelectorAll('span');
+const congratContent = document.querySelector('.congrat__text').textContent;
 let timeout = 500;
 
 
@@ -76,7 +76,7 @@ function newGame(container, cardsCount) {
         }
 
         if (document.querySelectorAll('.card.success').length === cardsNumberArray.length) {
-            fireCongrat(congratContent);
+            fireCongrat(congratContent.split(''));
 
             setTimeout(function () {
                 document.querySelector('.reply__container').append(document.querySelector('.reply__btn'));
@@ -96,7 +96,6 @@ function fireCongrat(list) {
     for (let i = 0; i < list.length; i++) {
         setTimeout(function () {
             congratContainer.append(list[i]);
-            list[i].classList.remove('none');
         }, timeout)
         timeout = timeout + 50;
     } 

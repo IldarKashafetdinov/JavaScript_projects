@@ -296,7 +296,7 @@ body{
 	justify-content: center;
 }
 
-span {
+.congrat__container {
 	margin-bottom: 150px;
 	font-weight: 700;
 	font-size: 70px;
